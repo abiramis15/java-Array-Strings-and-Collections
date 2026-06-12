@@ -1,0 +1,33 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.next();
+
+        int star = 0, hash = 0;
+
+        for (char ch : s.toCharArray()) {
+            if (ch == '*')
+                star++;
+            else if (ch == '#')
+                hash++;
+        }
+
+        int diff = star - hash;
+
+        System.out.print("The Difference of the character in the given string: ");
+
+        if (diff == 0) {
+            System.out.print("0");
+        } else {
+            int absDiff = Math.abs(diff);
+
+            // Format based on odd/even difference
+            if (absDiff % 2 == 0)
+                System.out.print("0" + absDiff);
+            else
+                System.out.print("00" + absDiff);
+        }
+    }
+}
