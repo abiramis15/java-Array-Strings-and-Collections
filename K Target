@@ -1,0 +1,31 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int k = sc.nextInt();
+
+        int count = 0;
+        boolean found = false;
+
+        for (int i = 0; i < n; i++) {
+            int num = sc.nextInt();
+
+            if (num == k) {
+                if (found) {
+                    count++;
+                } else {
+                    found = true;
+                }
+            }
+        }
+
+        if (found) {
+            System.out.println(count);
+        } else {
+            System.out.println(-1);
+        }
+    }
+}
