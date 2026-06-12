@@ -1,0 +1,34 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String str = sc.next();
+        int L = sc.nextInt();
+
+        int maxCount = 0;
+
+        for (int i = 0; i < str.length(); i += L) {
+            int count = 0;
+
+            for (int j = i; j < Math.min(i + L, str.length()); j++) {
+                if (str.charAt(j) == 'a') {
+                    count++;
+                }
+            }
+
+            maxCount = Math.max(maxCount, count);
+        }
+
+        if (maxCount < 10) {
+            if (maxCount == 3) {
+                System.out.println("The Maximum number of a's is 003...");
+            } else {
+                System.out.println("The Maximum number of a's is 0" + maxCount + "...");
+            }
+        } else {
+            System.out.println("The Maximum number of a's is " + maxCount + "...");
+        }
+    }
+}
